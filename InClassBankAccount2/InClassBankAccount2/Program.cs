@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace InClassBankAccount2
 {
-    public enum Acc_Type
-    {
-
-        Saving,
-        Chequing,
-        Credit
-    }
+   
 
     class Program
     {
@@ -87,122 +81,17 @@ namespace InClassBankAccount2
         }
     }
 
-    public abstract class Account
-    {
-
-        protected decimal balance;
-        protected Acc_Type accountType;
-        protected string accountNumber;
-        protected string accountName;
-
-        public bool Deposit(decimal amount)
-        {
-            if (amount > 0)
-            {
-                balance += amount;
-                return true;
-            }
-
-            return false;
-        }
+    
 
 
-
-        public virtual bool Withdrawal(decimal amount)
-        {
-            if (amount > 0)
-            {
-                if (balance >= amount)
-                {
-                    balance -= amount;
-                    return true;
-                }
-
-            }
-
-            return false;
-        }
+   
 
 
 
 
-        public decimal BalanceCheck()
-        {
-
-            return balance;
-        }
-
-    }
+  
 
 
-
-
-    public class Saving : Account
-    {
-        public Saving(string accNumber, string accName, decimal initialAmount)
-
-        {
-            base.accountNumber = accNumber;
-            base.accountName = accName;
-            base.Deposit(initialAmount);
-            base.accountType = Acc_Type.Saving;
-
-
-        }
-
-    }
-
-
-
-
-    public class Chequing : Account
-    {
-        public Chequing(string accNumber, string accName, decimal initialAmount)
-
-        {
-            base.accountNumber = accNumber;
-            base.accountName = accName;
-            base.Deposit(initialAmount);
-            base.accountType = Acc_Type.Chequing;
-
-
-        }
-
-
-        public override bool Withdrawal(decimal amount)
-        {
-            if (amount > 0)
-            {
-                if ((balance - amount) >= -500)
-                {
-                    balance -= amount;
-                    return true;
-                }
-
-            }
-            return false;
-        }
-
-
-
-
-    }
-
-
-
-    public class Credit : Account
-    {
-        public Credit(string accNumber, string accName, decimal initialAmount)
-
-        {
-            base.accountNumber = accNumber;
-            base.accountName = accName;
-            base.Deposit(initialAmount);
-            base.accountType = Acc_Type.Credit;
-
-
-        }
-
-    }
+ 
 
 }
