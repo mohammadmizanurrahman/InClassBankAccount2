@@ -13,7 +13,7 @@ namespace InClassBankAccount2
         static void Main(string[] args)
         {
             //
-            Console.WriteLine("Sabrina Ahmed");
+            Console.WriteLine("Sabrina Ahmed Lima");
 
             Saving Sv1 = new Saving("001", "Sette", 300.00m);
             Chequing Chq1 = new Chequing("001", "Mizan", 200.00m);
